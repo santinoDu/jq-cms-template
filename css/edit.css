@@ -1,0 +1,61 @@
+.hover-shadow{
+    background-color: rgba(75, 122, 210, .5);
+}
+
+.edit-menu{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    padding: 10px;
+    background-color: #fff;
+    z-index: 99999;
+}
+.edit-menu .item{
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.edit-menu .item:hover{
+    background-color: #3599ff;
+    color: #fff;
+}
+
+.virtual-phone{
+    position: relative;
+    float: left;
+    width: 375px;
+    height: 627px;
+    border: 10px solid #000000;
+    overflow-y: scroll;
+    background-color: #fff;
+}
+
+.module-box{
+    float: left;
+    width: 200px;
+}
+
+.module-box .item{
+    line-height: 50px;
+}
+
+.edit-box{
+    float: left;
+}
+
+.edit-box .item{
+    padding: 10px;
+}
+
+.edit-delete{
+    display: none !important;
+}
+
+.edit_open{
+    background-color: rgba(75, 122, 210, .3);
+}
+
+.edit_focus{
+    background-color: rgba(75, 122, 210, .9);
+}

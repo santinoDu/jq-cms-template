@@ -1,0 +1,402 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+html {
+    height: 100%;
+    font-size: 62.5%;
+}
+
+body {
+    line-height: 1;
+    -webkit-text-size-adjust: none;
+}
+
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary {
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    color: #000;
+    background: transparent;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    vertical-align: top;
+}
+
+i {
+    font-style: normal;
+}
+
+.clearfix:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+.hr{
+    margin: 0 10px;
+    height: 1px;
+    background-color: #d7d7d7;
+    -webkit-transform: scaleY(.5);
+    -moz-transform: scaleY(.5);
+    -ms-transform: scaleY(.5);
+    -o-transform: scaleY(.5);
+    transform: scaleY(.5);
+}
+
+.main {
+
+}
+
+.jtc-card {
+    padding: 10px 10px 6px;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+}
+
+.nav-icon {
+    padding-top: 25px;
+}
+
+.page-header {
+    box-sizing: border-box;
+    height: 88px;
+    padding: 40px 10px 0;
+    background-color: #4b7ad2;
+}
+.search-mod {
+    position: relative;
+}
+
+.search-mod .search-input{
+    box-sizing: border-box;
+    width: 100%;
+    height: 32px;
+    padding: 9px 10px 9px 26px;
+    font-size: 1.4rem;
+    border: none;
+    background-color: #fafafa;
+}
+
+.search-mod .search-btn{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 26px;
+    height: 100%;
+}
+.search-mod .search-btn i{
+    position: absolute;
+    left: 9px;
+    top: 9px;
+    width: 15px;
+    height: 15px;
+    background-image: url('../images/search_btn.png');
+    background-size: 100%;
+}
+
+.search-mod .search-btn:active i{
+    top: 7px;
+}
+
+.icon-mod {
+    padding: 0 1%;
+}
+
+.icon-mod li {
+    float: left;
+    width: 16.66%;
+    margin-bottom: 14px;
+    text-align: center;
+}
+
+.icon-mod li a {
+    display: block;
+}
+
+.icon-mod li .img {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.icon-mod li .img img{
+    border-radius: 4px;
+}
+
+.icon-mod li .title {
+    font-size: 1.2rem;
+    padding: 6px 0;
+}
+
+.card-title{
+    margin-bottom: 12px;
+}
+
+.card-title .c-main-title {
+    float: left;
+    margin-left: 2px;
+    padding-left: 5px;
+    border-left: 2px solid #508aeb;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.card-title .c-more {
+    float: right;
+    margin-right: 2px;
+    font-size: 1.2rem;
+    color: #508aeb;
+}
+
+.card-title .c-more a {
+    color: #508aeb;
+}
+
+.hot-list{
+    margin-bottom: 10px;
+}
+.hot-list li{
+    float: left;
+    width: 50%;
+    height: 3rem;
+    overflow: hidden;
+    font-size: 1.4rem;
+    line-height: 3rem;
+}
+.hot-list li a{
+    display: block;
+    height: 100%;
+    position: relative;
+    padding-left: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.hot-list li a span{
+    position: absolute;
+    left: 30px;
+    right: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.hot-list li a i{
+    position: absolute;
+    top: .8rem;
+    right: 0;
+    transform: scale(0.875);
+    -webkit-transform: scale(0.875);
+    margin-left: 4px;
+    width: 1.4rem;
+    height: 1.4rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    text-align: center;
+    color: #fff;
+    background-color: #e33536;
+}
+
+.nav-box{
+    padding-top: 12px;
+}
+
+.nav-box .item{
+    padding-bottom: 20px;
+    font-size: 1.3rem;
+    line-height: 2rem;
+}
+
+.nav-box .i-title{
+    float: left;
+    position: relative;
+    padding-left: 10px;
+    width: 18%;
+    box-sizing: border-box;
+    color: #508aeb;
+}
+
+.nav-box .i-title:after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: .35rem;
+    width: 1px;
+    height: 1.3rem;
+    background-color: #c4c4c4;
+}
+
+.nav-box .i-conts{
+    float: right;
+    width: 80%;
+}
+
+.nav-box .i-conts a{
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+.img-box{
+    padding-top: 5px;
+}
+
+.img-box .item{
+    float: left;
+    margin-right: 2%;
+    padding-bottom: 10px;
+    width: 32%;
+}
+
+.img-box .item:nth-child(3n){
+    margin-right: 0;
+}
+
+.u-icon-box{
+    padding-top: 12px;
+}
+
+.u-icon-box .item{
+    float: left;
+    margin-bottom: 25px;
+    width: 20%;
+    text-align: center;
+}
+
+.u-icon-box .item a{
+    display: block;
+}
+
+.u-icon-box .item .img {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.u-icon-box .item .title {
+    font-size: 1.2rem;
+    padding: 6px 0;
+}
+
+
+.life .card-title .c-main-title{
+    border-color: #54ae56;
+}
+
+.life .card-title .c-more,
+.life .card-title .c-more a,
+.life .nav-box .i-title,
+.life .nav-box .i-title a {
+    color: #54ae56;
+}
+
+.casual .card-title .c-main-title{
+    border-color: #dd5847;
+}
+
+.casual .card-title .c-more,
+.casual .card-title .c-more a,
+.casual .nav-box .i-title,
+.casual .nav-box .i-title a {
+    color: #dd5847;
+}
+
+.utils .card-title .c-main-title{
+    border-color: #7e97ac;
+}
+
+.utils .card-title .c-more,
+.utils .card-title .c-more a{
+    color: #7e97ac;
+}
+
+
+.service .card-title .c-main-title{
+    border-color: #32a5e7;
+}
+
+.service .card-title .c-more,
+.service .card-title .c-more a,
+.service .nav-box .i-title,
+.service .nav-box .i-title a {
+    color: #32a5e7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
