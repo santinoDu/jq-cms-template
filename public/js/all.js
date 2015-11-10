@@ -62,7 +62,7 @@ var config = {
 
 
 
-var events = (function () {
+var events = (function (window, document) {
     //阴影显示
     $('#jtc_main').on('mouseenter', 'a', function () {
         handle.addHoverShadow(this);
@@ -148,7 +148,7 @@ var events = (function () {
         }else if($(this).hasClass('j_edit_down')){
             handle.editDown();
         }else if($(this).hasClass('j_edit_close')){
-            $('#edit_menu').hide();
+            handle.editClose();
         }
         $('#edit_menu').hide();
     })
@@ -193,15 +193,23 @@ var handle = {
             count = 0;
         this.editModifyMap = [];
         for(; i< len; i++){
-            var tagName = $children.eq(i).get(0).tagName.toLocaleLowerCase();
+            var tagName = $children.eq(i).get(0).tagName.toLocaleLowerCase(),
+                hasTextNode = !$children.eq(i).children().length && $children.eq(i).text().trim().length;
             if(validTags.hasOwnProperty(tagName)){
                 this.editModifyMap.push($children.eq(i).get(0));
                 for(var prop in validTags[tagName]){
-                    var value = validTags[tagName][prop]
+                    var value = validTags[tagName][prop];
                     str +='<div class="item">' + value.desc
                         + '<input data-key="'+ prop +'" data-map="'+ count +'" type="'+ value.type +'" />'
                         + '</div>';
                 }
+                count++;
+            }else if(hasTextNode){
+                var text = $children.eq(i).text();
+                this.editModifyMap.push($children.eq(i).get(0));
+                str += '<div class="item">' + text
+                    + '<input data-key="innerHTML" data-map="'+ count +'" type="text" value="'+ text +'" />'
+                    + '</div>';
                 count++;
             }
         }
@@ -211,12 +219,15 @@ var handle = {
     },
     editDelete: function () {
         var validDom = this.getValidDom(this.editOpenDom);
+        validDom.remove();
+        this.editClose();
+        //validDom.addClass('edit-delete');
 
-        validDom.addClass('edit-delete');
     },
     editClone: function () {
         var validDom = this.getValidDom(this.editOpenDom);
         validDom.after(validDom.clone());
+        this.editClose();
     },
     editUp: function () {
         var validDom = this.getValidDom(this.editOpenDom),
@@ -224,6 +235,7 @@ var handle = {
         if(prevDom.length){
             prevDom.before(validDom)
         }
+        this.editClose();
     },
     editDown: function () {
         var validDom = this.getValidDom(this.editOpenDom),
@@ -231,6 +243,11 @@ var handle = {
         if(nextDom.length){
             nextDom.after(validDom)
         }
+        this.editClose();
+    },
+    editClose: function () {
+        $('.edit_open').removeClass('edit_open');
+        $('#virtual_phone').removeClass('edit-open');
     },
     //这个方法有待改进
     getValidDom: function (dom) {
@@ -243,6 +260,7 @@ var handle = {
     changeEditOpen: function (dom) {
         $('.edit_open').removeClass('edit_open');
         dom.addClass('edit_open');
+        $('#virtual_phone').addClass('edit-open');
         this.editOpenDom = dom;
     },
     prevNodeFocus: function () {

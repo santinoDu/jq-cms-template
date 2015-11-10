@@ -31,6 +31,10 @@
     background-color: #fff;
 }
 
+.virtual-phone.edit-open{
+    border-color: red;
+}
+
 .module-box{
     float: left;
     width: 200px;
@@ -42,6 +46,8 @@
 
 .edit-box{
     float: left;
+    height: 647px;
+    overflow-y: scroll;
 }
 
 .edit-box .item{

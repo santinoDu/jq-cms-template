@@ -1,4 +1,4 @@
-var events = (function () {
+var events = (function (window, document) {
     //阴影显示
     $('#jtc_main').on('mouseenter', 'a', function () {
         handle.addHoverShadow(this);
@@ -84,7 +84,7 @@ var events = (function () {
         }else if($(this).hasClass('j_edit_down')){
             handle.editDown();
         }else if($(this).hasClass('j_edit_close')){
-            $('#edit_menu').hide();
+            handle.editClose();
         }
         $('#edit_menu').hide();
     })
